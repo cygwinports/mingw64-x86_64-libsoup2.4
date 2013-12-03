@@ -1,0 +1,26 @@
+CROSS_HOST="x86_64-w64-mingw32"
+ORIG_PN="libsoup"
+inherit cross gnome2
+
+NAME="mingw64-x86_64-libsoup2.4"
+VERSION=2.42.3.1
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="GNOME HTTP library for Win64 toolchain"
+DESCRIPTION="Soup is an HTTP library implementation in C. It was originally
+part of a SOAP (Simple Object Access Protocol) implementation, but the SOAP
+code was later removed (and then later partially reimplemented...) Soup uses
+GObjects and the glib main loop, and is designed to work well with Gtk/GNOME
+applications. This enables GNOME applications to access HTTP servers on the
+network in a completely asynchronous fashion, very similar to the Gtk+
+programming model (a synchronous operation mode is also supported for those
+who want it)."
+
+PATCH_URI="http://pkgs.fedoraproject.org/cgit/mingw-libsoup.git/plain/0001-Include-string.h-in-soup-request-file.c.patch?h=f19"
+
+DEPEND="gnome-common gtk-doc
+	pkgconfig(glib-2.0)
+	pkgconfig(libxml-2.0)
+	pkgconfig(sqlite3)"
+
+CYGCONF_ARGS="--with-gnome --without-apache-httpd"
