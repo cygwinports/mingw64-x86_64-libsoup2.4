@@ -3,7 +3,7 @@ ORIG_PN="libsoup"
 inherit cross gnome2
 
 NAME="mingw64-x86_64-libsoup2.4"
-VERSION=2.42.3.1
+VERSION=2.44.2
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="GNOME HTTP library for Win64 toolchain"
@@ -16,11 +16,9 @@ network in a completely asynchronous fashion, very similar to the Gtk+
 programming model (a synchronous operation mode is also supported for those
 who want it)."
 
-PATCH_URI="http://pkgs.fedoraproject.org/cgit/mingw-libsoup.git/plain/0001-Include-string.h-in-soup-request-file.c.patch?h=f19"
-
 DEPEND="gnome-common gtk-doc
 	pkgconfig(glib-2.0)
 	pkgconfig(libxml-2.0)
 	pkgconfig(sqlite3)"
 
-CYGCONF_ARGS="--with-gnome --without-apache-httpd"
+CYGCONF_ARGS="--with-gnome --without-apache-httpd --disable-static"
