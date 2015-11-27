@@ -3,7 +3,7 @@ ORIG_PN="libsoup"
 inherit cross gnome2
 
 NAME="mingw64-x86_64-libsoup2.4"
-VERSION=2.48.1
+VERSION=2.52.2
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="GNOME HTTP library for Win64 toolchain"
@@ -20,5 +20,12 @@ DEPEND="gnome-common gtk-doc
 	pkgconfig(glib-2.0)
 	pkgconfig(libxml-2.0)
 	pkgconfig(sqlite3)"
+REQUIRES="mingw64-i686-glib2.0-networking"
 
-CYGCONF_ARGS="--with-gnome --without-apache-httpd --disable-static"
+CYGCONF_ARGS="
+	--disable-static
+	--disable-introspection
+	--disable-vala
+	--with-gnome
+	--without-apache-httpd
+"
