@@ -3,7 +3,7 @@ ORIG_PN="libsoup"
 inherit cross gnome2
 
 NAME="mingw64-x86_64-libsoup2.4"
-VERSION=2.58.2
+VERSION=2.60.3
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="GNOME HTTP library for Win64 toolchain"
